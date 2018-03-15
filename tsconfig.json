@@ -1,0 +1,18 @@
+﻿{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "es2015",
+        "outDir": "dist/es5",
+        "strict": true,
+        "moduleResolution": "node",
+        "inlineSourceMap": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ]
+    },
+    "exclude": [
+        "dist/types", // avoid error TS5055: Cannot write file 'myfile.d.ts' https://github.com/Microsoft/TypeScript/issues/6046
+        "node_modules"
+    ]
+}

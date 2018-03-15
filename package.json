@@ -1,0 +1,25 @@
+{
+  "name": "@yellicode/core",
+  "version": "0.1.2",
+  "description": "Core package for Yellicode - an extensible code generator.",
+  "license": "MPL-2.0",
+  "main": "dist/bundles/core.umd.js",
+  "module": "dist/es5/core.js",
+  "es2015": "dist/es6/core.js",
+  "types": "dist/types/core.d.ts", 
+  "repository": {
+    "type": "git",
+    "url": "github:yellicode/core.git"
+  },
+  "devDependencies": {    
+    "rollup": "^0.50.0"
+  },
+  "scripts": {
+    "build:es5": "tsc",
+    "build:es6": "tsc -m es6 -t es6 --outDir dist/es6 --declaration --declarationDir dist/types",
+    "build:umd": "./node_modules/.bin/rollup --config rollup.config.js",
+    "build:dist": "npm run build:es5 & npm run build:es6 & npm run build:umd",
+    "build": "npm run build:dist",
+    "prepublish": "npm run build:dist"
+  }
+}
