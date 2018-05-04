@@ -6,5 +6,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 export * from './stringutility'
-export * from "./messaging";
-export * from "./logger";
+export * from './messaging';
+export * from './logger';
+export * from './unique-id'
