@@ -6,7 +6,7 @@
   "main": "dist/bundles/core.umd.js",
   "module": "dist/es5/core.js",
   "es2015": "dist/es6/core.js",
-  "types": "dist/types/core.d.ts", 
+  "types": "dist/types/core.d.ts",
   "repository": {
     "type": "git",
     "url": "github:yellicode/core.git"
@@ -14,9 +14,10 @@
   "dependencies": {
     "uuid": "^3.2.1"
   },
-  "devDependencies": {    
+  "devDependencies": {
+    "@types/uuid": "^3.4.3",
     "rollup": "^0.50.0",
-    "@types/uuid": "^3.4.3"
+    "rollup-plugin-node-builtins": "^2.1.2"
   },
   "scripts": {
     "build:es5": "tsc",
