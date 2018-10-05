@@ -16,8 +16,7 @@
   },
   "devDependencies": {
     "@types/uuid": "^3.4.3",
-    "rollup": "^0.50.0",
-    "rollup-plugin-node-builtins": "^2.1.2"
+    "rollup": "^0.50.0"
   },
   "scripts": {
     "build:es5": "tsc",
