@@ -25,6 +25,6 @@
     "build:umd": "./node_modules/.bin/rollup --config rollup.config.js",
     "build:dist": "npm run build:es5 & npm run build:es6 & npm run build:umd",
     "build": "npm run build:dist",
-    "prepublish": "npm run build:dist"
+    "prepare": "npm run build:dist"
   }
 }
