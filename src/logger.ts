@@ -95,6 +95,6 @@ export class ConsoleLogger implements Logger {
         }
         var d = new Date();
         var n = d.toLocaleTimeString();
-        this.console.log(`${n} - ${level}: ${message}`);
+        this.console.log(`${n}:${d.getMilliseconds()} - ${level}: ${message}`);
     }
 }
