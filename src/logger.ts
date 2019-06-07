@@ -94,7 +94,14 @@ export class ConsoleLogger implements Logger {
             return;
         }
         var d = new Date();
-        var n = d.toLocaleTimeString();
-        this.console.log(`${n}:${d.getMilliseconds()} - ${level}: ${message}`);
+        var time = d.toLocaleTimeString();
+        var ms = ConsoleLogger.padMilliseconds(d.getMilliseconds());
+        this.console.log(`${time}:${ms} - ${level}: ${message}`);
     }
+
+    private static padMilliseconds(num: number, length = 3) {
+        if ((''+num).length >= length) return num;
+        var lead = '0' + new Array(length).join('0')
+        return (lead + num).slice(-length);
+      }
 }
