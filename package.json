@@ -1,6 +1,6 @@
 {
   "name": "@yellicode/core",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Core package for Yellicode - an extensible code generator.",
   "license": "MPL-2.0",
   "main": "dist/bundles/core.umd.js",
