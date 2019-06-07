@@ -1,4 +1,6 @@
-﻿/*
+﻿import { LogLevel } from './logger';
+
+/*
  * Copyright (c) 2019 Yellicode
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -10,7 +12,8 @@
  * Defines the structure of messages that are sent between the client template process and the main process.
  */
 export interface IProcessMessage {
-    cmd: 'processStarted' | 'generateStarted' | 'generateFinished' | 'getModel' | 'setModel';
+    cmd?: 'processStarted' | 'generateStarted' | 'generateFinished' | 'getModel' | 'setModel';
+    log?: { level: LogLevel, message: string };
 }
 
 export interface ISetModelMessage extends IProcessMessage {

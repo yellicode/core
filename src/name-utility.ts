@@ -8,7 +8,7 @@
 import { StringUtility } from './string-utility';
 
 /**
- * Provides helper functions for converting names.
+ * Provides helper functions for converting the casing of names.
  */
 export class NameUtility {
     /**

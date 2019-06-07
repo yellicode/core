@@ -1,10 +1,3 @@
-export interface Logger {
-    verbose(message: string): void;
-    info(message: string): void;
-    warn(message: string): void;
-    error(message: string): void;
-}
-
 /*
  * Copyright (c) 2019 Yellicode
  *
@@ -12,6 +5,22 @@ export interface Logger {
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
+
+ /**
+  * Defines the interface for types that implement logging. 
+  */
+export interface Logger {
+    verbose(message: string): void;
+    info(message: string): void;
+    warn(message: string): void;
+    error(message: string): void;
+    log(message: string, level: LogLevel): void;
+}
+
+
+ /**
+  * Enumerates the possible Yellicode logging levels.
+  */
 export enum LogLevel {
     None = 0,
     Error = 1,
@@ -34,8 +43,11 @@ export namespace LogLevel {
     }
 }
 
+/**
+ * A Logger implementation that logs to the default Console. 
+ */
 export class ConsoleLogger implements Logger {
-    constructor(private console: Console, private level: LogLevel = LogLevel.Info) {
+    constructor(private console: Console, private level: LogLevel = LogLevel.Info, private includeTimestamp = false) {
 
     }
 
@@ -59,9 +71,30 @@ export class ConsoleLogger implements Logger {
         this.write("Error", message);
     };
 
+    public log(message: string, level: LogLevel): void {
+        switch (level) {
+            case LogLevel.Verbose:
+                this.verbose(message);
+                break;
+            case LogLevel.Info:
+                this.info(message);
+                break;
+            case LogLevel.Warning:
+                this.warn(message);
+                break;
+            case LogLevel.Error:
+                this.error(message);
+                break;
+        }
+    }
+
     private write(level: string, message: string): void {
+        if (!this.includeTimestamp) {
+            this.console.log(`${level}: ${message}`);
+            return;
+        }
         var d = new Date();
         var n = d.toLocaleTimeString();
-        this.console.log(`${n} - ${level}: ${message}`)
+        this.console.log(`${n} - ${level}: ${message}`);
     }
 }
