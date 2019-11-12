@@ -7,6 +7,7 @@
   "module": "dist/es5/core.js",
   "es2015": "dist/es6/core.js",
   "types": "dist/types/core.d.ts",
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "github:yellicode/core.git"
