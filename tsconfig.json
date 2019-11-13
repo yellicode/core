@@ -5,7 +5,7 @@
         "outDir": "dist/es5",
         "strict": true,
         "moduleResolution": "node",
-        "inlineSourceMap": true,
+        "inlineSourceMap": false,
         "lib": [
             "es2015",
             "dom"
