@@ -13,11 +13,10 @@
     "url": "github:yellicode/core.git"
   },
   "dependencies": {
-    "uuid": "^3.2.1"
+    "nanoid": "^3.1.12"
   },
   "devDependencies": {
     "@types/node": "^10.11.7",
-    "@types/uuid": "^3.4.3",
     "rollup": "^0.50.0"
   },
   "scripts": {
