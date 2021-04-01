@@ -157,6 +157,40 @@ export abstract class CodeWriter implements TextWriter {
         return this;
     }
 
+     /**
+     * Disables writing any indentation for following writeIndent() and writeLine() calls, until
+     * resumeIndent() is called.
+     */
+    public suppressIndent(): this {
+        this.writer.suppressIndent();
+        return this;
+    }
+
+    /**
+     * Resumes writing indentation after a call to suppressIndent().
+     */
+    public resumeIndent(): this {
+        this.writer.resumeIndent();
+        return this;
+    }
+
+     /**
+     * Disables writing any end of line character for following and writeLine() calls, until
+     * resumeEndOfLine() is called.
+     */
+    public suppressEndOfLine(): this {
+        this.writer.suppressEndOfLine();
+        return this;
+    }
+
+    /**
+     * Resumes writing end of line characters after a call to suppressEndOfLine().
+     */
+    public resumeEndOfLine(): this {
+        this.writer.resumeEndOfLine();
+        return this;
+    }
+
     /**
     * The total number of lines currently written.
     */

@@ -93,6 +93,28 @@ export interface TextWriter {
      */
     clearIndent(): this;
 
+     /**
+     * Disables writing any indentation for following writeIndent() and writeLine() calls, until
+     * resumeIndent() is called.
+     */
+    suppressIndent(): this;
+
+    /**
+     * Resumes writing indentation after a call to suppressIndent().
+     */
+    resumeIndent(): this;
+
+    /**
+     * Disables writing any end of line character for following and writeLine() calls, until
+     * resumeEndOfLine() is called.
+     */
+    suppressEndOfLine(): this;
+
+     /**
+     * Resumes writing end of line characters after a call to suppressEndOfLine().
+     */
+    resumeEndOfLine(): this;
+
     /**
      * Prevents the SLOC (source lines of code) counter from being incremented.
      */
