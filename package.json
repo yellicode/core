@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "^14.14.22",
-    "rollup": "^0.50.0"
+    "rollup": "^3.29.5"
   },
   "scripts": {
     "build:es5": "tsc",
